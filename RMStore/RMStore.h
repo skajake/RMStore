@@ -66,6 +66,11 @@ extern NSInteger const RMStoreErrorCodeUnableToCompleteVerification;
            success:(void (^)(SKPaymentTransaction *transaction))successBlock
            failure:(void (^)(SKPaymentTransaction *transaction, NSError *error))failureBlock;
 
+- (void)addPayment:(NSString*)productIdentifier
+          discount:(SKPaymentDiscount *)discount
+           success:(void (^)(SKPaymentTransaction *transaction))successBlock
+           failure:(void (^)(SKPaymentTransaction *transaction, NSError *error))failureBlock;
+
 /** Request payment of the product with the given product identifier. `successBlock` will be called if the payment is successful, `failureBlock` if it isn't.
  @param productIdentifier The identifier of the product whose payment will be requested.
  @param userIdentifier An opaque identifier of the user’s account, if applicable. Can be `nil`.
